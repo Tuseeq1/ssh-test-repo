@@ -2,7 +2,8 @@ steps:
   - name: 'bash'
     script: |
       #!/usr/bin/env bash
-      echo "Hello World $TOKEN"
+      echo "Hello"
+      echo "world"
     secretEnv: ['TOKEN']
 availableSecrets:
   secretManager:
