@@ -1,11 +1,9 @@
 steps:
-  - name: 'gcr.io/cloud-builders/bazel:5.4.0'
-    entrypoint: 'bash'
-    args:
-      - echo $$TOKEN
-      - echo Test
-      - echo ABC
-    secretEnv: ['TOKEN']
+  - name: 'bash'
+  script: |
+    #!/usr/bin/env bash
+    echo "Hello World $$TOKEN"
+  secretEnv: ['TOKEN']
 availableSecrets:
   secretManager:
   - versionName: projects/282516044259/secrets/npmtest/versions/1
