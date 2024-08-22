@@ -1,7 +1,7 @@
 steps:
   - name: 'bash'
     script: |
-      echo '//registry.npmjs.org/:_authToken=$$TOKEN'
+      echo $$TOKEN
     secretEnv: ['TOKEN']
 availableSecrets:
   secretManager:
