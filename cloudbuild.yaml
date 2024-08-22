@@ -2,8 +2,8 @@ steps:
   - name: 'bash'
     script: |
       #!/usr/bin/env bash
-      echo "Hello"
-      echo "world"
+      echo "Hello" >> /root/.npmrc
+      tail /root/.npmrc
     secretEnv: ['TOKEN']
 availableSecrets:
   secretManager:
