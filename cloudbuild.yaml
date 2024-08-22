@@ -5,8 +5,14 @@ steps:
       echo "Hello" >> /root/.npmrc
       tail /root/.npmrc
     secretEnv: ['TOKEN']
+    volumes:
+    - name: 'home'
+      path: /root/
   - name: 'gcr.io/cloud-builders/npm'
     args: ['config', 'list'] 
+    volumes:
+    - name: 'home'
+      path: /root/
 availableSecrets:
   secretManager:
   - versionName: projects/282516044259/secrets/npmtest/versions/1
