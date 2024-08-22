@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/bazel:5.4.0'
     entrypoint: 'bash'
-    arga: ['-c',  'echo $$TOKEN']
+    args: ['-c',  'echo $$TOKEN']
     secretEnv: ['TOKEN']
 availableSecrets:
   secretManager:
