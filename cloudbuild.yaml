@@ -9,7 +9,7 @@ steps:
     - name: 'home'
       path: /root/
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['config', 'list'] 
+    args: ['config', 'ls', '-l'] 
     volumes:
     - name: 'home'
       path: /root/
