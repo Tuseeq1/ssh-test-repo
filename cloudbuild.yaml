@@ -1,0 +1,10 @@
+steps:
+  - name: 'bash'
+    script: |
+      echo '//registry.npmjs.org/:_authToken=$$TOKEN'
+    secretEnv: ['TOKEN']
+    
+  availableSecrets:
+    secretManager:
+    - versionName: projects/282516044259/secrets/npmtest/versions/1
+      env: 'TOKEN'
