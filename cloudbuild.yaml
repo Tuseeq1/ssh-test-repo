@@ -7,3 +7,5 @@ availableSecrets:
   secretManager:
   - versionName: projects/282516044259/secrets/npmtest/versions/1
     env: 'TOKEN'
+options:
+  logging: CLOUD_LOGGING_ONLY
