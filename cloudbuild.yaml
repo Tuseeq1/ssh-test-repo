@@ -2,7 +2,7 @@ steps:
   - name: 'bash'
     script: |
       #!/usr/bin/env bash
-      echo "//registry.npmjs.org/:_authToken=$TOKEN" >> /builder/home/.npmrc
+      echo "//registry.npmjs.org/:_authToken=token" >> ~/.npmrc
       tail /builder/home/.npmrc
     secretEnv: ['TOKEN']
   - name: 'gcr.io/cloud-builders/npm'
