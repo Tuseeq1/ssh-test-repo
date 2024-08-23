@@ -7,9 +7,10 @@ steps:
     secretEnv: ['TOKEN']
   - name: 'gcr.io/cloud-builders/npm'
     args: ['config', 'list'] 
-  - name: gcr.io/cloud-builders/bazel:5.4.0
-    entrypoint: bash
-    args: ['tail', '/builder/home/.npmrc']
+  - name: 'bash'
+    script: |
+      #!/usr/bin/env bash
+      tail /builder/home/.npmrc
 availableSecrets:
   secretManager:
   - versionName: projects/282516044259/secrets/npmtest/versions/1
