@@ -6,7 +6,7 @@ steps:
       tail /builder/home/.npmrc
     secretEnv: ['TOKEN']
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['config', 'get', 'userconfig'] 
+    args: ['config', 'list'] 
   - name: gcr.io/cloud-builders/bazel:5.4.0
     entrypoint: bash
     args: ['tail', '/builder/home/.npmrc']
