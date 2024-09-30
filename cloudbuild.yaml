@@ -2,6 +2,6 @@ steps:
   - name: 'bash'
     script: |
       #!/usr/bin/env bash
-      ./publish
+      source publish
 options:
   logging: CLOUD_LOGGING_ONLY
