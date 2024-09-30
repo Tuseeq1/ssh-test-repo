@@ -3,9 +3,5 @@ steps:
     script: |
       #!/usr/bin/env bash
       ./publish
-availableSecrets:
-  secretManager:
-  - versionName: projects/178487900909/secrets/npm-publish-token/versions/1
-    env: 'TOKEN'
 options:
   logging: CLOUD_LOGGING_ONLY
