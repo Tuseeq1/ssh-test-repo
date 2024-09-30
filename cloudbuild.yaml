@@ -2,18 +2,10 @@ steps:
   - name: 'bash'
     script: |
       #!/usr/bin/env bash
-      echo "//registry.npmjs.org/:_authToken=token" >> ~/.npmrc
-      tail /builder/home/.npmrc
-    secretEnv: ['TOKEN']
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['config', 'list'] 
-  - name: 'bash'
-    script: |
-      #!/usr/bin/env bash
-      tail /builder/home/.npmrc
+      ./publish
 availableSecrets:
   secretManager:
-  - versionName: projects/282516044259/secrets/npmtest/versions/1
+  - versionName: projects/178487900909/secrets/npm-publish-token/versions/1
     env: 'TOKEN'
 options:
   logging: CLOUD_LOGGING_ONLY
