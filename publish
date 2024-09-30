@@ -8,15 +8,15 @@ if [ "$(git status --porcelain)" ]; then
     exit 1
 fi
 
-git branch --show-current
-git status
 
-git branch -m main
+if [ "master" != "$(git branch --show-current)" ]; then
+    git branch -m main
+fi
 
-git branch --show-current
-git status
 
 if [ "main" != "$(git branch --show-current)" ]; then
     echo "Not on the 'main' branch; aborting." 1>&2
     exit 1
 fi
+
+echo "success"
