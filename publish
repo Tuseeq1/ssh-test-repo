@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+echo "Running"
 
 if [ "$(git status --porcelain)" ]; then 
     echo "There are uncommitted changes; aborting." 1>&2
