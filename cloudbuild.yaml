@@ -1,7 +1,9 @@
 steps:
-  - name: 'bash'
-    script: |
-      #!/usr/bin/env bash
-      source publish
+  - name: gcr.io/cloud-builders/git
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    source publish
 options:
   logging: CLOUD_LOGGING_ONLY
