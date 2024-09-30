@@ -1,9 +1,9 @@
 steps:
   - name: gcr.io/cloud-builders/git
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    source publish
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      source publish
 options:
   logging: CLOUD_LOGGING_ONLY
