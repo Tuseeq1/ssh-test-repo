@@ -1,9 +1,17 @@
 steps:
-  - name: gcr.io/cloud-builders/git
+  - name: 'gcr.io/cloud-builders/gcloud'
+    script: |
+      #!/usr/bin/env bash
+      gcloud secrets versions access latest --secret=github-token-access --format='get(payload.data)' | tr '_-' '/+' | base64 -d > ~/token.txt
+  - name: 'gcr.io/$PROJECT_ID/github'
     entrypoint: 'bash'
     args:
     - '-c'
     - |
-      source publish
+      set -e
+      __VERSION=$(cat version.bzl | grep DF_VERSION | awk '{ print $3 }' | sed "s/\"//g")
+      echo "Creating release notes for $__VERSION"
+      gh auth login --with-token < ~/token.txt
+      gh release create $__VERSION --generate-notes
 options:
   logging: CLOUD_LOGGING_ONLY
